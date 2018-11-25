@@ -1,7 +1,58 @@
 @media (max-width: 767px) {
   /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+ 
   .body-content {
     padding-top: 50px;
     background-color: lightgray;
   }
+}
+
+
+h1 {
+  font-size: 3em;
+  color: black;
+  margin-bottom: 0;
+  text-decoration: none; 
+}
+h2 {
+  font-size: 2em;
+  margin-top: 0;
+  padding-top: 0;
+}
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+  color: darkblue;
+  font-size: 1.5em
+}
+nav a:visited, a:link {
+  color: #607d8b;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #cfd8dc;
+}
+nav a.active {
+  color: #039be5;
+}
+
+.my-header {
+  
+  color: black;
+  margin-bottom: 0;
+  text-decoration: none;
+  font-size: 3em;
+ 
+}
+
+a {
+  text-decoration: none;
+}
+
+*{
+background-color: lightgrey;
 }
