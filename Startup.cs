@@ -34,6 +34,15 @@ namespace WebApplication3
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +62,7 @@ namespace WebApplication3
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
+            app.UseCors("CorsPolicy");
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -66,6 +76,7 @@ namespace WebApplication3
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
                 spa.Options.SourcePath = "ClientApp";
+                spa.Options.StartupTimeout = new System.TimeSpan(0, 0, 200);
 
                 if (env.IsDevelopment())
                 {

@@ -15,7 +15,7 @@ namespace WebApplication3.Data
 
         }
 
-        public DbSet<vehiclesFEGOV> Vehicles { get; set; }
+        public DbSet<vehiclesFEGOV> vehiclesFEGOV { get; set; }
         public DbSet<UserCar> UserCars { get; set; }
         public DbSet<User> Users { get; set; }
 

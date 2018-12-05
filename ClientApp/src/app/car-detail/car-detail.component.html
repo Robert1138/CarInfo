@@ -1,0 +1,49 @@
+<h1>
+Car Details
+</h1>
+
+
+<div class = "basestyling">
+
+<div *ngIf ="selectedCar"> 
+<h1>{{selectedCar.year}}  {{selectedCar.make}} {{selectedCar.model}} </h1>
+
+<h2>Vehicle Characteristics</h2>
+<label>Class: </label> <p> {{selectedCar.VClass}}</p> 
+<label>Cylinders: </label> <p> {{selectedCar.cylinders}} </p>
+<label>Displacement: </label> <p> {{selectedCar.displ}} Liters</p> 
+<label>Transmission: </label> <p> {{selectedCar.trany}}</p>
+<label>Drive: </label> <p> {{selectedCar.drive}}</p>
+
+
+<label>MPG City: </label> <p> {{selectedCar.city08}}</p> 
+<label>MPG Highway: </label> <p> {{selectedCar.highway08}}</p> 
+<label>MPG Overall: </label> <p> {{selectedCar.comb08}}</p> 
+
+<label>Turbocharged: </label> <p> {{selectedCar.tCharger}}</p> 
+<label>SuperCharged: </label> <p> {{selectedCar.sCharger}}</p> 
+
+<label>Storage 2-door: </label> <p> {{selectedCar.lv2}}</p> 
+<label>Storage 4-door: </label> <p> {{selectedCar.lv4}}</p> 
+
+
+
+<h2>Costs</h2>
+<label>Annual Barrels of Gasoline Used: </label> <p> {{selectedCar.barrels08}}</p> 
+<label>Annual Fuel Cost </label> <p> ${{selectedCar.fuelCost08}}</p>
+<label>Money Saved by Purchasing this Vehicle</label> <p> {{selectedCar.youSaveSpend}}</p> 
+
+
+
+
+<h2>Carbon Footprint</h2>
+<label>Co2 Output: </label> <p> {{selectedCar.co2}} grams/mile</p> 
+<label>Guzzler: </label> <p> {{selectedCar.city08}}</p> 
+
+
+<h2>Vehicle Characteristics</h2>
+<h2>Vehicle Characteristics</h2>
+
+
+</div> 
+</div>

@@ -1,3 +1,9 @@
+.modelschoices {
+    padding: 0.8em 0.7em 0 0.7em;
+
+}
+
+
 html {
     background-color: lightgrey;
 }
@@ -83,7 +89,3 @@ button.delete {
   background-color: gray !important;
   color: white;
 }
-
-
-
-

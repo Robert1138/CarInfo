@@ -2,14 +2,15 @@
 <div class = my-container>
 
 <div class = my-header>
-<a>My Garage</a>
+<a routerLink = "/Home">My Garage</a>
 </div>
   
 <nav>
-  <a>Home</a>
-  <a>Browse Car Info</a>
-  <a>Custom Car List</a>
-  <a>Account</a>
+  <a routerLink = "/Home">Home</a>
+  <a routerLink = "/BrowseCarInfo">Browse Car Info</a>
+  <a routerLink = "/CustomCarList">Custom Car List</a>
+  <a routerLink = "/Account">Account</a>
 </nav>
-<app-home></app-home>
+<router-outlet></router-outlet>
+<!--  <app-home></app-home>  -->
 <div>

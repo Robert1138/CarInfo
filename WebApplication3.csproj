@@ -20,7 +20,8 @@
 
   <ItemGroup> <!-- Add this! -->
               <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
-              <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.1"/>
+              <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.1" />
+              <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
             </ItemGroup>
 
   <ItemGroup>

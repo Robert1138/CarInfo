@@ -1,0 +1,58 @@
+<h1>
+  Browse data on thousands of cars
+</h1>
+
+<div class = "modelschoices">
+<p>
+     Select a make
+</p>
+</div>
+<div class = "modelschoices">
+<select   
+        (change)= "$test" [value]='Acura'>
+        //"ChangingValue($event)"
+  <option value="">   </option>
+  <option value="Acura">Acura</option>
+  <option value="Alpha Romeo">Alpha Romeo</option>
+  <option value="Aston Martin">Aston Martin</option>
+  <option value="BMW">BMW</option>
+  <option value="Cadillac">Cadillac</option>
+  <option value="Chevrolet">Chevrolet</option>
+  <option value="Dodge">Dodge</option>
+  <option value="Ferrari">Ferrari</option>
+  <option value="Ford">Ford</option>
+  <option value="General Motors">General Motors</option>
+  <option value="Honda">Honda</option>
+  <option value="Jeep">Jeep</option>
+  <option value="Lexus">Lexus</option>
+  <option value="Mazda">Mazda</option>
+  <option value="Porshe">Porshe</option>
+  <option value="Subaru">Subaru</option>
+  <option value="Tesla">Tesla</option>
+  <option value="Toyota">Toyota</option>
+  <option value="Volkswagen">Volkswagen</option>
+  <option value="Yugo">Yugo</option>
+</select>
+</div>
+<button class="button" title="Find Cars"
+    (click)="showCars()">Find Cars</button>
+
+    
+
+
+<div *ngIf = "cars">
+  
+  <ul class = "popularcars">
+  <li *ngFor = "let car of cars">
+     <a routerLink= "/detail/{{car.id}}">
+       <span class = "badge"> {{car.year}}</span> {{car.model}}
+       </a>
+  </li>
+  </ul>
+
+
+
+
+</div>
+
+
