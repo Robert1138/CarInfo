@@ -1,26 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OktaAuthService } from '@okta/okta-angular';
 
+import{ AuthService  } from './../auth/auth.service';
+import { AuthInterceptor } from '../auth.interceptor';
+
+// ...
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  public joggingData: Array<any>;
+  public currentJogging: any;
   public isAuthenticated: boolean;
-  constructor ( public oktaAuth: OktaAuthService) {
-    // get authentication state for immediate use
-    this.oktaAuth.isAuthenticated().then(result => {
-      this.isAuthenticated = result;
-    });
-  
-    // subscribe to authentication state changes
-    this.oktaAuth.$authenticationState.subscribe(
-      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
-    );
-    
-  
+
+  constructor ( public auth: AuthService) { 
+    auth.handleAuthentication();
+
   }
 
+  ngOnInit() {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      this.auth.renewSession();
+  }
+}
 }

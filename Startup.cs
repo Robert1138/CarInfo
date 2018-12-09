@@ -63,6 +63,7 @@ namespace WebApplication3
             app.UseSpaStaticFiles();
 
             app.UseCors("CorsPolicy");
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

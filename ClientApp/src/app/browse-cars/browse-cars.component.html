@@ -7,6 +7,48 @@
      Select a make
 </p>
 </div>
+
+<div class = "modelschoices">
+<select [(ngModel)]="test">
+  <option *ngFor= "let make of Carlist" [ngValue] = "make"> {{make}}</option>
+</select>
+</div>
+
+<button class="button" title="Find Cars"
+    (click)="showCars()">Find Cars</button>
+
+    
+
+
+<div *ngIf = "cars">
+  
+  <ul class = "popularcars">
+  <li *ngFor = "let car of cars">
+     <a routerLink= "/detail/{{car.id}}">
+       <span class = "badge"> {{car.year}}</span> {{car.model}}
+       </a>
+  </li>
+  </ul>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
 <div class = "modelschoices">
 <select   
         (change)= "$test" [value]='Acura'>
@@ -34,25 +76,7 @@
   <option value="Yugo">Yugo</option>
 </select>
 </div>
-<button class="button" title="Find Cars"
-    (click)="showCars()">Find Cars</button>
-
-    
-
-
-<div *ngIf = "cars">
-  
-  <ul class = "popularcars">
-  <li *ngFor = "let car of cars">
-     <a routerLink= "/detail/{{car.id}}">
-       <span class = "badge"> {{car.year}}</span> {{car.model}}
-       </a>
-  </li>
-  </ul>
 
 
 
-
-</div>
-
-
+-->

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Data;
 
 namespace WebApplication3.Controllers
 {
+   
     [Route("api/[controller]")]
     [ApiController]
     public class BrowseController : ControllerBase
@@ -19,6 +21,7 @@ namespace WebApplication3.Controllers
             this.context = context; 
         }
 
+       
         [HttpGet("{make}")]
         public async Task<IActionResult> getCarsFromMake(string make)
         {

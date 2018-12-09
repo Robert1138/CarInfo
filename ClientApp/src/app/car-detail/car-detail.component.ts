@@ -3,6 +3,8 @@ import { Car } from '../car';
 import { CarService } from '../car.service';
 import { ActivatedRoute } from '@angular/router';
 
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-car-detail',
   templateUrl: './car-detail.component.html',
@@ -14,7 +16,8 @@ selectedCar: Car[];
 
 
   constructor(private route: ActivatedRoute,
-              private carService: CarService) 
+              private carService: CarService,
+              private location: Location) 
   {
 
   }
@@ -29,6 +32,9 @@ selectedCar: Car[];
     this.carService.getCarFromId(id)
     .subscribe(selectedCar => this.selectedCar = selectedCar);
     
+  }
+  goBack(): void {
+    this.location.back();
   }
 
  

@@ -20,6 +20,7 @@ import {
   OktaAuthModule,
   OktaCallbackComponent,
 } from '@okta/okta-angular';
+import { AuthService } from './auth/auth.service';
 
 
 
@@ -27,8 +28,8 @@ import {
 
 const config = {
   issuer: 'https://dev-990736.oktapreview.com/oauth2/default',
-  redirectUri: 'http://localhost:44328/implicit/callback',
-  clientId: '0oai38cztqPpRVAIH0h7',
+  redirectUri: 'https://localhost:44328/implicit/callback',
+  clientId: '0oai3ceetqlumpnJM0h7',
   scope: 'openid profile email'
 };
 
@@ -40,12 +41,14 @@ const config = {
     CounterComponent,
     FetchDataComponent,
     CarDetailComponent,
-    BrowseCarsComponent
+    BrowseCarsComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    OktaAuthModule.initAuth(config),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'Home', component: HomeComponent }, 
@@ -53,15 +56,16 @@ const config = {
       { path: 'CustomCarList', component: FetchDataComponent },
       { path: 'Account', component: FetchDataComponent },
       { path: 'detail/:id', component: CarDetailComponent },
-      { path: 'implicit/callback', component: OktaCallbackComponent }
-      
+      { path: 'callback', component: BrowseCarsComponent },
+
     ]),
 
-    OktaAuthModule.initAuth(config)
   ],
   
-  providers: [CarService, 
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  providers: [CarService, AuthService, 
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    AuthInterceptor
+  
   ],
   bootstrap: [AppComponent],
 })
