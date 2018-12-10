@@ -35,6 +35,8 @@ namespace WebApplication3
                 configuration.RootPath = "ClientApp/dist";
             });
 
+            // old implementation
+            /*
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -43,6 +45,7 @@ namespace WebApplication3
                     .AllowAnyHeader()
                     .AllowCredentials());
             });
+            */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +65,16 @@ namespace WebApplication3
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
-            app.UseCors("CorsPolicy");
+//            app.UseCors("CorsPolicy");
+
+            app.UseCors(builder =>
+             builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials()
+    );
+
+
             app.UseAuthentication();
             app.UseMvc(routes =>
             {

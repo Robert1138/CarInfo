@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication3.Data;
 using WebApplication3.Models;
@@ -10,6 +11,9 @@ using WebApplication3.Models;
 
 namespace WebApplication3.Controllers
 {
+//    [EnableCors("https://webapplication320181208101119.azurewebsites.net")]
+    
+
     [Route("api/[controller]")]
     public class CarController : Controller
     {
@@ -103,7 +107,7 @@ namespace WebApplication3.Controllers
             return carInfo;
         }
         */
-
+        [EnableCors]
         [HttpGet("{id}")]
         public async Task<IActionResult> getCarById(int id)
         {

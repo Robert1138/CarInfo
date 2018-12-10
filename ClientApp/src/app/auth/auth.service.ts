@@ -26,7 +26,10 @@ export class AuthService {
     clientID: 'ebt3ks0406Nf5s6WGm9CUY28fZxUcksr',
     domain: 'mygarage.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'https://localhost:44328/callback',
+    // new 
+    redirectUri: 'https://webapplication320181208101119.azurewebsites.net/callback',
+    // old that worked
+    //redirectUri: 'https://localhost:44328/callback',
     scope: 'openid'
   });
 

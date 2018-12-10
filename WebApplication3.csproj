@@ -10,17 +10,30 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <UserSecretsId>7ebedc3a-1c16-42f1-981d-e0aff68cb783</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup> <!-- Add this! -->
               <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
               <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.1" />
+              <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
+              <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+              <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="2.2.0" />
+              <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
+              <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
+              <PackageReference Include="Microsoft.Extensions.Primitives" Version="2.2.0" />
+              <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+              <PackageReference Include="Microsoft.Net.Http.Headers" Version="2.2.0" />
               <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
             </ItemGroup>
 
