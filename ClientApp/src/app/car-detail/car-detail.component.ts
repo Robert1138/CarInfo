@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../car';
+import { singleCar } from '../singleCar';
 import { CarService } from '../car.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,6 +14,7 @@ import { Location } from '@angular/common';
 export class CarDetailComponent implements OnInit {
 
 selectedCar: Car[];
+saveCar: singleCar;
 
 
   constructor(private route: ActivatedRoute,
@@ -33,6 +35,20 @@ selectedCar: Car[];
     .subscribe(selectedCar => this.selectedCar = selectedCar);
     
   }
+
+ saveCarToList(): void {
+
+     if(this.selectedCar[0].model == "") {
+       this.saveCar.carName = "Acura";
+     } else {
+       this.saveCar.carName = this.selectedCar[0].model; 
+     }
+
+     this.carService.addCarsToList(this.saveCar);
+
+ }
+
+
   goBack(): void {
     this.location.back();
   }

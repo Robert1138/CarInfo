@@ -107,7 +107,7 @@ namespace WebApplication3.Controllers
             return carInfo;
         }
         */
-        [EnableCors]
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> getCarById(int id)
         {

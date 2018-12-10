@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable} from 'rxjs';
 import { of } from 'rxjs/observable/of';
 import { Car } from './car'
+import { singleCar } from './singleCar';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 
@@ -16,7 +17,7 @@ export class CarService {
   // change for deployment
 private baseUrl = 'https://webapplication320181208101119.azurewebsites.net/';
 
-
+// dev url
 // 'https://localhost:44328/';
 
 private apiUrl = 'api/car';
@@ -26,7 +27,7 @@ carDefault: Car[];
 
   constructor(private http: HttpClient) { }
 
-  //gets car from an id
+  //GETS car from an id         --- functional
   getCarFromId(id: number): Observable<Car[]> {
 
     return this.http.get<Car[]>(this.baseUrl + this.apiUrl + "/" + id,
@@ -47,6 +48,7 @@ carDefault: Car[];
 
   }
 
+  ///// GET list of cars from a specfic make        ---functional
   getCarsOfMake(make: string): Observable<Car[]> {
 
     return this.http.get<Car[]>(this.baseUrl + this.browseApiUrl + "/" + make).pipe(
@@ -54,6 +56,14 @@ carDefault: Car[];
       catchError(this.handleError<Car[]>(`getCarsOfMake if = ${make}`))
     )
 
+  }
+
+  ///// POST cars to custom list     --- not implemented backend
+  addCarsToList (car: singleCar): Observable<singleCar> {
+    return this.http.post<singleCar>(this.apiUrl, car, httpOptions)
+      .pipe(
+        catchError(this.handleError('addHero', car))
+      );
   }
 
   
