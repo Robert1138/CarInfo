@@ -6,7 +6,7 @@ Website that displays car info using a C# asp.net backend and angular frontend
 Website url: https://webapplication320181208101119.azurewebsites.net/
 
 <h3>Requirements</h3>
-Below is a summary of the requirements met and their status
+Below is a summary of the requirements met and their status.  
 Please note that while the project is fully functional using localhost, http requests are currently not working on website.    
 
 <h3>MVC</h3>
@@ -14,13 +14,12 @@ Models(UserModel, UserVehiclesModel, fegovVehiclesModel) and Controllers(CarCont
 Views implemented with Angular including all routing 
 
 <h3>ORM</h3>
-Entity Framework with SQlite
-3 tables, one containing vehicle information, one containing user information, and one containing cars related to the user
+Entity Framework with SQlite.  Three tables, one containing vehicle information, one containing user information, and one containing cars related to the user
 one to many relationship exists with one users having many vehicles
 
 <h3>SPA</h3>
 Used Angular 
-Multiple get methods implemented in CarService.ts and called in car-detail and browse components
+Multiple get methods implemented in CarService.ts and called in car-detail and browse components.  
 Get methods can display info of a car based on ID and display all cars from a specific make.  
 Post method written to add cars to a list but not utilized   
 
@@ -32,9 +31,11 @@ DI exhibited in Backend with injecting database context in the Car and Browse co
 Utilized auth0 to login/signup and store users.  
 This is functional on the website
 Credentials if you need them 
+<li>
 Credentials 1
-// test@gmail.com
-// Bobbill22
+// UserName: test@gmail.com
+// Password: Bobbill22
+  </li>
 Credentials 2 
-// robert.wooten.833@my.csun.edu
-// Hankhill21
+// UserName: robert.wooten.833@my.csun.edu
+// Password Hankhill21
